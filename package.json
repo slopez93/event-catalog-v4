@@ -1,0 +1,26 @@
+{
+  "name": "catalog-v4",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "eventcatalog dev",
+    "editor": "npx @eventcatalog/editor@latest",
+    "build": "eventcatalog build",
+    "start": "eventcatalog start",
+    "preview": "eventcatalog preview",
+    "generate": "eventcatalog generate",
+    "federate": "eventcatalog federate",
+    "export": "eventcatalog export",
+    "lint": "eventcatalog-linter",
+    "fitness": "eventcatalog fitness check",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@eventcatalog/core": "5.5.0",
+    "@eventcatalog/generator-asyncapi": "7.1.0",
+    "@eventcatalog/linter": "1.2.4"
+  },
+  "devDependencies": {
+    "@eventcatalog/fitness": "0.1.0"
+  }
+}
