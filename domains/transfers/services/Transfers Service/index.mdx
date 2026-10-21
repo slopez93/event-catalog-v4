@@ -1,0 +1,20 @@
+---
+id: Transfers Service
+name: Transfer Service
+version: 1.0.0
+summary: Consumes completed payment events to initiate transfer processing.
+badges: []
+sends: []
+receives:
+  - id: PaymentCompleted
+    version: 1.0.0
+schemaPath: transfer-service.yaml
+specifications:
+  asyncapiPath: transfer-service.yaml
+owners:
+  - order-management
+---
+Consumes completed payment events to initiate transfer processing.
+
+## Architecture diagram
+<NodeGraph />

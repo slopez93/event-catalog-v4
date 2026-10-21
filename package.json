@@ -6,6 +6,7 @@
     "dev": "eventcatalog dev",
     "editor": "npx @eventcatalog/editor@latest",
     "build": "eventcatalog build",
+    "deploy": "bash infra/deploy.sh",
     "start": "eventcatalog start",
     "preview": "eventcatalog preview",
     "generate": "eventcatalog generate",
@@ -16,7 +17,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@eventcatalog/core": "5.5.0",
+    "@eventcatalog/core": "^4.12.3",
     "@eventcatalog/generator-asyncapi": "7.1.0",
     "@eventcatalog/linter": "1.2.4"
   },

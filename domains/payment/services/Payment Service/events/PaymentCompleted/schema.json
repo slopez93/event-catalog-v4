@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "eventId",
+    "paymentId",
+    "amount",
+    "currency"
+  ],
+  "properties": {
+    "eventId": {
+      "type": "string",
+      "x-parser-schema-id": "<anonymous-schema-2>"
+    },
+    "paymentId": {
+      "type": "string",
+      "x-parser-schema-id": "<anonymous-schema-3>"
+    },
+    "amount": {
+      "type": "number",
+      "x-parser-schema-id": "<anonymous-schema-4>"
+    },
+    "currency": {
+      "type": "string",
+      "x-parser-schema-id": "<anonymous-schema-5>"
+    }
+  },
+  "x-parser-schema-id": "<anonymous-schema-1>"
+}

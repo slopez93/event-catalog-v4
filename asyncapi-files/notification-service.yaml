@@ -1,0 +1,46 @@
+asyncapi: 3.0.0
+info:
+  title: Notification Service
+  version: 1.0.0
+  description: Consumes completed payment events to send payment notifications.
+  x-eventcatalog-id: notification-service
+servers:
+  kafka:
+    host: localhost:9092
+    protocol: kafka
+channels:
+  paymentCompleted:
+    address: payments.completed
+    messages:
+      PaymentCompleted:
+        $ref: '#/components/messages/PaymentCompleted'
+operations:
+  consumePaymentCompletedForNotification:
+    action: receive
+    channel:
+      $ref: '#/channels/paymentCompleted'
+    messages:
+      - $ref: '#/channels/paymentCompleted/messages/PaymentCompleted'
+components:
+  messages:
+    PaymentCompleted:
+      name: PaymentCompleted
+      title: Payment completed
+      contentType: application/json
+      payload:
+        type: object
+        additionalProperties: false
+        required:
+          - eventId
+          - paymentId
+          - amount
+          - currency
+        properties:
+          eventId:
+            type: string
+          paymentId:
+            type: string
+          amount:
+            type: number
+          currency:
+            type: string

@@ -1,7 +1,6 @@
 import path from 'path';
-import url from 'url';
 
-const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+const __dirname = process.cwd();
 
 /** @type {import('@eventcatalog/core/bin/eventcatalog.config').Config} */
 export default {
@@ -51,12 +50,12 @@ export default {
       {
         services: [
           {
-            path: path.join(__dirname, 'asyncapi-files', 'orders-service.yml'),
+            path: path.join(__dirname, 'asyncapi-files', 'transfer-service.yaml'),
             owners: ['order-management'],
-            id: 'Orders Service',
+            id: 'Transfers Service',
           },
         ],
-        domain: { id: 'orders', name: 'Orders', version: '0.0.1' },
+        domain: { id: 'transfers', name: 'Transfers', version: '0.0.1' },
       },
     ],
     [
@@ -64,7 +63,7 @@ export default {
       {
         services: [
           {
-            path: path.join(__dirname, 'asyncapi-files', 'payment-service.yml'),
+            path: path.join(__dirname, 'asyncapi-files', 'payment-service.yaml'),
             owners: ['order-management'],
             id: 'Payment Service',
           },
@@ -76,10 +75,13 @@ export default {
       '@eventcatalog/generator-asyncapi',
       {
         services: [
-          { path: path.join(__dirname, 'asyncapi-files', 'user-service.yml'), owners: ['user-management'], id: 'User Service' },
+          {
+            path: path.join(__dirname, 'asyncapi-files', 'notification-service.yaml'),
+            owners: ['order-management'],
+            id: 'Notification Service',
+          },
         ],
-        domain: { id: 'user-domain', name: 'User Domain', version: '0.0.1' },
-        debug: true,
+        domain: { id: 'notificaions', name: 'Notifications', version: '0.0.1' },
       },
     ],
   ],
